@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Форма участия — День матери · Для неё</title>
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#5D2C70;--ink:#2B1636;--gold:#D4A64A;--blush:#FADCD9;--ivory:#FFF8F5;--line:#E7CFC9;--err:#B3261E}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font:400 17px/1.55 Manrope,system-ui,sans-serif}
+.hero{background:var(--blush);text-align:center;padding:40px 20px 72px}
+.logo{width:150px;height:150px;border-radius:50%;display:block;margin:0 auto 22px;box-shadow:0 0 0 5px var(--ivory),0 0 0 8px var(--gold)}
+h1{font:700 clamp(30px,6vw,46px)/1.12 "Cormorant Garamond",Georgia,serif;color:var(--plum);margin:0 auto 14px;max-width:640px}
+.lead{max-width:560px;margin:0 auto;font-size:18px}
+.info{max-width:560px;margin:26px auto 0;text-align:left;background:var(--ivory);border:2px solid var(--gold);border-radius:18px;padding:18px 22px}
+.info p{margin:0}.info p+p{margin-top:10px}
+.info b{color:var(--plum)}
+.info a{color:var(--plum);font-weight:600}
+main{max-width:620px;margin:-40px auto 60px;padding:0 16px}
+form{background:#fff;border-radius:22px;padding:30px 24px 26px;box-shadow:0 12px 40px rgba(91,42,110,.14)}
+h2{font:700 26px "Cormorant Garamond",Georgia,serif;color:var(--plum);margin:0 0 20px}
+.f{margin-bottom:20px}
+label,legend{display:block;font-weight:700;margin-bottom:6px;padding:0}
+fieldset{border:0;margin:0 0 20px;padding:0}
+input[type=text],input[type=tel],input[type=date]{width:100%;font:inherit;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--ivory);color:var(--ink)}
+input:focus-visible{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--plum)}
+.opt{display:flex;align-items:flex-start;gap:11px;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer;font-weight:400}
+.opt:has(input:checked){border-color:var(--plum);background:#F6ECF8}
+.opt input{accent-color:var(--plum);width:20px;height:20px;margin:2px 0 0;flex:none}
+.sub{margin:-2px 0 10px 0;display:none}.sub.on{display:block}
+.hint{font-size:14px;color:#7a6580;margin-top:5px}
+.err{color:var(--err);font-size:14px;margin-top:5px;display:none}
+.bad .err{display:block}.bad input[type=text],.bad input[type=tel],.bad input[type=date]{border-color:var(--err)}
+.hp{position:absolute;left:-9999px}
+button{width:100%;font:700 18px Manrope,sans-serif;color:#fff;background:var(--plum);border:0;border-radius:14px;padding:16px;cursor:pointer;margin-top:6px}
+button:hover{background:#4b2359}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+button:disabled{opacity:.6;cursor:wait}
+.consent{font-weight:400;font-size:14px;line-height:1.45}
+#fail{display:none;color:var(--err);margin-top:14px;text-align:center}
+.done{display:none;text-align:center;background:#fff;border-radius:22px;padding:44px 24px;box-shadow:0 12px 40px rgba(91,42,110,.14);border:2px solid var(--gold)}
+.done h2{font-size:32px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="logo" src="logo.jpg" alt="Логотип просветительского общественного объединения «Для неё»">
+  <h1>Приглашаем отметить День матери вместе</h1>
+  <p class="lead">Просим заполнить форму участия, чтобы мы могли подготовить для вас тёплую встречу.</p>
+  <div class="info">
+    <p><b>Место:</b> клуб «Гэтсби», Instagram <a href="https://www.instagram.com/gatsby_hall_minsk_/" target="_blank" rel="noopener">@gatsby_hall_minsk_</a></p>
+    <p><b>Время:</b> предварительно с 12–13 часов до 17 часов</p>
+  </div>
+</header>
+
+<main>
+<form id="form" novalidate>
+  <h2>Форма участия</h2>
+
+  <div class="f" data-f="fio"><label for="fio">ФИО</label>
+    <input type="text" id="fio" autocomplete="name" placeholder="Иванова Мария Ивановна">
+    <div class="err">Укажите фамилию, имя и отчество</div></div>
+
+  <div class="f" data-f="birth"><label for="birth">Дата рождения</label>
+    <input type="date" id="birth" autocomplete="bday" min="1900-01-01">
+    <div class="err">Укажите дату рождения</div></div>
+
+  <div class="f" data-f="addr"><label for="addr">Адрес регистрации</label>
+    <input type="text" id="addr" autocomplete="street-address" placeholder="Город, улица, дом, квартира">
+    <div class="err">Укажите адрес регистрации</div></div>
+
+  <fieldset data-f="cit"><legend>Гражданство</legend>
+    <label class="opt"><input type="radio" name="cit" value="Республика Беларусь"> Республика Беларусь</label>
+    <label class="opt"><input type="radio" name="cit" value="Другое"> Другое</label>
+    <div class="sub" id="citSub"><input type="text" id="citOther" placeholder="Укажите гражданство" aria-label="Другое гражданство"></div>
+    <div class="err">Выберите гражданство</div></fieldset>
+
+  <div class="f" data-f="phone"><label for="phone">Номер телефона</label>
+    <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" value="+375-" placeholder="+375-29-123-45-67">
+    <div class="err">Введите номер полностью: +375-XX-XXX-XX-XX</div></div>
+
+  <fieldset data-f="st"><legend>Место работы</legend>
+    <label class="opt"><input type="radio" name="st" value="Работаю"> Работаю</label>
+    <div class="sub" id="stWork"><input type="text" id="work" placeholder="Название организации" aria-label="Место работы"></div>
+    <label class="opt"><input type="radio" name="st" value="По уходу за ребёнком-инвалидом"> По уходу за ребёнком-инвалидом</label>
+    <label class="opt"><input type="radio" name="st" value="По уходу за инвалидом 1 группы"> По уходу за инвалидом 1 группы</label>
+    <label class="opt"><input type="radio" name="st" value="Другое"> Другое</label>
+    <div class="sub" id="stOther"><input type="text" id="stOtherTxt" placeholder="Уточните" aria-label="Другое"></div>
+    <div class="err">Выберите вариант и заполните уточнение</div></fieldset>
+
+  <input class="hp" type="text" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+  <div class="f" data-f="ok"><label class="opt consent"><input type="checkbox" id="ok"> Даю согласие на обработку моих персональных данных для организации мероприятия</label>
+    <div class="err">Поставьте галочку, чтобы отправить форму</div></div>
+
+  <button type="submit" id="send">Отправить заявку</button>
+  <div id="fail" role="alert">Не удалось отправить. Проверьте интернет и попробуйте ещё раз.</div>
+</form>
+
+<section class="done" id="done" role="status" aria-live="polite">
+  <h2>Спасибо, заявка принята!</h2>
+  <p>Мы свяжемся с вами по указанному номеру телефона и сообщим подробности.</p>
+</section>
+</main>
+
+<script>
+// Сюда вставьте ссылку на веб-приложение Google (она заканчивается на /exec)
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkca0SSDOStGem7_lFxjq7eMwAqBiiiJd8XKEF0YXN5y3jh9aO3o3K1hHMFz0t3nw/exec";
+
+const $ = id => document.getElementById(id);
+const radio = n => (document.querySelector('input[name="'+n+'"]:checked')||{}).value;
+const mark = (k, bad) => document.querySelector('[data-f="'+k+'"]').classList.toggle('bad', bad);
+
+// Маска телефона +375-XX-XXX-XX-XX
+const phone = $('phone');
+function fmt(v){
+  let d = v.replace(/\D/g,'');
+  if (d.startsWith('375')) d = d.slice(3);
+  d = d.slice(0,9);
+  let s = '+375-';
+  if (d.length) s += d.slice(0,2);
+  if (d.length > 2) s += '-' + d.slice(2,5);
+  if (d.length > 5) s += '-' + d.slice(5,7);
+  if (d.length > 7) s += '-' + d.slice(7,9);
+  return s;
+}
+phone.addEventListener('input', () => phone.value = fmt(phone.value));
+phone.addEventListener('focus', () => { if (!phone.value) phone.value = '+375-'; });
+
+// Показ дополнительных полей
+document.addEventListener('change', () => {
+  $('citSub').classList.toggle('on', radio('cit') === 'Другое');
+  $('stWork').classList.toggle('on', radio('st') === 'Работаю');
+  $('stOther').classList.toggle('on', radio('st') === 'Другое');
+});
+
+$('form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const v = {
+    fio: $('fio').value.trim(), birth: $('birth').value, addr: $('addr').value.trim(),
+    cit: radio('cit'), phone: phone.value, st: radio('st')
+  };
+  const citOk = v.cit && (v.cit !== 'Другое' || $('citOther').value.trim());
+  const stDetail = v.st === 'Работаю' ? $('work').value.trim() : v.st === 'Другое' ? $('stOtherTxt').value.trim() : '-';
+  const checks = {
+    fio: v.fio.split(/\s+/).filter(Boolean).length >= 2,
+    birth: !!v.birth, addr: v.addr.length > 4, cit: !!citOk,
+    phone: /^\+375-\d{2}-\d{3}-\d{2}-\d{2}$/.test(v.phone),
+    st: !!v.st && !!stDetail, ok: $('ok').checked
+  };
+  let first = null;
+  for (const k in checks){ mark(k, !checks[k]); if (!checks[k] && !first) first = k; }
+  if (first) { document.querySelector('[data-f="'+first+'"]').scrollIntoView({block:'center'}); return; }
+
+  const btn = $('send'); btn.disabled = true; btn.textContent = 'Отправляем…'; $('fail').style.display = 'none';
+  const payload = {
+    fio: v.fio, birth: v.birth, addr: v.addr,
+    citizenship: v.cit === 'Другое' ? 'Другое: ' + $('citOther').value.trim() : v.cit,
+    phone: v.phone,
+    status: v.st === 'Работаю' ? 'Работаю: ' + stDetail : v.st === 'Другое' ? 'Другое: ' + stDetail : v.st,
+    website: $('website').value
+  };
+  try {
+    if (SCRIPT_URL.startsWith('ВСТАВЬТЕ')) throw new Error('Не указана ссылка на скрипт');
+    await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(payload) });
+    $('form').style.display = 'none'; $('done').style.display = 'block';
+    $('done').scrollIntoView({block:'center'});
+  } catch (err) {
+    console.error(err);
+    $('fail').style.display = 'block'; btn.disabled = false; btn.textContent = 'Отправить заявку';
+  }
+});
+</script>
+</body>
+</html>
